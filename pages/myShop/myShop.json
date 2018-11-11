@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "seller-item": "/component/myShopItem/myShopItem"
+  }
+}

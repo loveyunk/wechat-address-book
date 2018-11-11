@@ -1,0 +1,84 @@
+<view class="apply-container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section-item section-img" bindtap="chooseImage">
+      <view class="section__title">*商家图片</view>
+      <!-- <view class="section__input"> -->
+      <image class="image-icon" src="{{logo || './image.svg'}}"></image>
+      <!-- </view> -->
+    </view>
+    <view class="section">
+      <view class="section-item">
+        <view class="section__title">*商家名称</view>
+        <input class="section__input" name="name" placeholder="请填写店铺名称" />
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-item">
+        <view class="section__title">*联系人</view>
+        <input class="section__input" name="linkman" placeholder="请填写联系人" />
+      </view>
+      <view class="section-item">
+        <view class="section__title">*联系电话</view>
+        <input class="section__input" name="cell_phone" placeholder="请填写联系电话" />
+      </view>
+    </view>
+    <view class="section-item">
+      <view class="section__title">*选择分类</view>
+      <view class="picker-wrapper">
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="{{'name'}}">
+          <view class="picker">
+            <view>{{category}} </view>
+            <view>
+              <image class="arrow-icon" src="/images/arrow.svg"></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="section-item" bindtap="getTheLocation">
+      <view class="section__title">*定位位置</view>
+      <view class="section__input address-wrapper">
+        <image class="location-icon" src="./location.svg"></image>
+        <text class="address">{{location.address}}</text>
+      </view>
+    </view>
+    <view class="section-item">
+      <view class="section__title">*商家微信号</view>
+      <input class="section__input" name="wechat" placeholder="请填写微信号" />
+    </view>
+    <view class="section">
+      <view class="section-item">
+        <view class="section__title">*付款码</view>
+        <input class="section__input" disabled="true" name="transfer_code" value="{{applyCode}}" placeholder="请将些码填入转帐记录中" />
+      </view>
+      <view class="section-item">
+        <view class="section__title">业务员编号</view>
+        <input class="section__input" name="admin_id" placeholder="请输入业务员编号" />
+      </view>
+      <view class="section-item">
+        <view class="section__title">*商家介绍</view>
+        <!-- <input class="section__input" name="input" placeholder="请填写商家介绍" /> -->
+      </view>
+      <view class="intro-wrapper">
+        <textarea class="section__textarea" name="breif_word" maxlength="{{200}}" placeholder="请填写商家介绍" />
+        <view>
+          <block wx:for="{{businessImgUrl}}">
+            <image class="img-item" src='{{item}}'>
+              <view bindtap="deleteImgItem" id='{{index}}' class="delete-mask">
+                <image class="delete-icon" src='/images/delete.svg'></image>
+              </view>
+            </image>
+          </block>
+          <block wx:if="{{3-businessImgUrl.length}}">
+            <image class="upload-icon" bindtap="chooseBuinessImage" src="/images/upload.svg"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <checkbox class='checkbox' checked="{{true}}" />我已阅读《
+    <text bindtap='server' style='color: #0030ff'>服务条款</text> 》
+    <view class="apply-btn">
+      <button type="primary" formType="submit">申请入驻</button>
+    </view>
+  </form>
+</view>

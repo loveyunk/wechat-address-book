@@ -1,0 +1,2 @@
+/* pages/record/record.wxss */
+@import "/pages/common/loadMore/loadMore.wxss";

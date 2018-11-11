@@ -1,0 +1,35 @@
+<view class="detail">
+  <view class="header">
+    <view class="logo-wrapper">
+      <image bindtap='previewLogo' class="logo" src="{{logo}}"></image>
+    </view>
+    <view class="layout-right">
+      <view class="layout-right-top">
+        <view class="title">{{name}}</view>
+      </view>
+      <view>
+        <view>申请时间：{{addTime}}</view>
+      </view>
+      <view>
+        <view>目前状态：待审核 </view>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-item">
+      <view>经营范围</view>
+      <view class="section-item__content">{{range}}</view>
+    </view>
+    <view class="section-item">
+      <view>付款码</view>
+      <view class="section-item__content">172837483974</view>
+    </view>
+    <view class="section-item intro">
+      感谢您申请入驻我们平台，请等待后台审核，方可展示在平台上，如有任何疑问或者商务合作申请，请点击联系我们！审核通过之后可以去申请在商城中展示个人公众号或小程序，请密切关注审核情况。
+    </view>
+    <view class='btn-wrapper'>
+      <button bindtap='goPay'>去支付</button>
+      <button bindtap='contactUs'>联系我们</button>
+    </view>
+  </view>
+</view>

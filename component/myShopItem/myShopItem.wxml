@@ -1,0 +1,32 @@
+<view class="item-container" bindtap="openDetail">
+  <view>
+    <view class="info-wrapper">
+      <image bindtap="previewImage" class="avatar" src="{{avatar}}"></image>
+      <view class="info">
+        <view class="name">{{name}}</view>
+        <view>
+          <image src="./phone.svg" class="phone-icon"></image>
+          <text class="phone-icon">{{phone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="location-wrapper">
+      <image class="location-icon" src="./location.svg"></image>
+      {{address}}
+    </view>
+  </view>
+  <view class="right">
+    <view>申请时间：
+      <text>{{apply_time}}</text>
+    </view>
+    <view wx:if="{{status !== 1}}">到期时间：
+      <text>{{end_time}}</text>
+    </view>
+    <view>当前状态：
+      <text style="color: #ff0000" wx:if="{{status === 1}}">待审核</text>
+      <text style="color: #00ccff" wx:elif="{{status === 2}}">正常营业</text>
+      <text style="color: #ffce40" wx:else>已过期</text>
+    </view>
+    <view class="go-pay" catchtap="goPay" style='color: #ff0000' wx:if="{{status === 1}}">去支付>>></view>
+  </view>
+</view>

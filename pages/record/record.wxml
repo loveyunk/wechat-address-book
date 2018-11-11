@@ -1,0 +1,12 @@
+<import src="/pages/common/loadMore/loadMore.wxml" />
+
+<view class="record-container">
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height: {{ scrollHeight }}px;">
+    <block wx:for="{{sellerData}}" wx:key="{{index}}">
+      <seller-item bind:opendetail="onOpenDetail" index="{{item.call_shop.id}}" id="{{item.call_shop.id}}" distance="{{item.distance}}" name="{{item.call_shop.name}}" phone="{{item.call_shop.cell_phone}}" location="{{item.call_shop.addr_full_name}}" avatar="{{item.call_shop.logo}}"></seller-item>
+    </block>
+  </scroll-view>
+</view>
+
+<template is="loadMore" data="{{ hidden }}">
+</template>

@@ -1,0 +1,27 @@
+.pay-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 50rpx;
+}
+
+.qrcode {
+  height: 720rpx;
+}
+
+.pay-code {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 50rpx 50rpx;
+}
+
+.copy-btn {
+   vertical-align: bottom; 
+}
+
+.prompt {
+  text-indent: 2em;
+  line-height: 1.6;
+}

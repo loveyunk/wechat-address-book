@@ -1,0 +1,57 @@
+<import src="/pages/common/loadMore/loadMore.wxml" />
+
+<view class="container">
+ <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height: {{ scrollHeight }}px;">
+  <view class="topbar">
+    <view class="location">
+      <image class="location-icon" src='/images/location.png'></image>
+      {{address}}
+    </view>
+    <form class="search-form" bindsubmit="formSubmit" bindreset="formReset">
+      <view class="search-wrapper">
+        <input class="search-input" name="input" placeholder="搜索商铺名称" />
+        <button formType="submit" class="search-btn">搜索</button>
+      </view>
+    </form>
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+         <image src="{{'http://'+item}}" mode='scaleToFill' class="slide-image" height="150" /> 
+      </swiper-item>
+    </block>
+  </swiper>
+  <view>
+    <view class="fui-tab">
+      <view class="fui-navbar">
+        <block wx:for="{{tabs}}" wx:key="{{index}}">
+          <view id="{{index}}" class="fui-navbar__item {{activeIndex == index ? 'fui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="fui-navbar__titl">{{item}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="fui-tab__panel">
+        <view class="fui-tab__content" hidden="{{activeIndex != 0}}">
+         
+            <block wx:for="{{sellerData}}" wx:key="{{index}}">
+              <seller-item bind:opendetail="onOpenDetail" distance="{{item.distance}}" id="{{item.id}}" index="{{item.id}}" name="{{item.name}}" phone="{{item.cell_phone}}" location="{{item.addr_full_name}}" avatar="{{item.logo}}"></seller-item>
+            </block>
+        </view>
+        <view class="fui-tab__content" hidden="{{activeIndex != 1}}">
+          <block wx:for="{{favorite}}" wx:key="{{index}}">
+            <seller-item bind:opendetail="onOpenDetail" distance="{{item.distance}}" id="{{item.store_shop.id}}" index="{{item.store_shop.id}}" name="{{item.store_shop.name}}" phone="{{item.store_shop.cell_phone}}" location="{{item.store_shop.addr_full_name}}"
+              avatar="{{item.store_shop.logo}}"></seller-item>
+          </block>
+        </view>
+        <view class="fui-tab__content" hidden="{{activeIndex != 2}}">
+          <block wx:for="{{nearData}}" wx:key="{{index}}">
+            <seller-item bind:opendetail="onOpenDetail" distance="{{item.distance}}" id="{{item.id}}" index="{{item.id}}" name="{{item.name}}" phone="{{item.cell_phone}}" location="{{item.addr_full_name}}" avatar="{{item.logo}}"></seller-item>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+</view>
+
+<template is="loadMore" data="{{ hidden }}"></template>

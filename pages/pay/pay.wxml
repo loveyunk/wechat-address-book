@@ -1,0 +1,13 @@
+<view class="pay-container">
+  <image bindtap='previewQrcode' class="qrcode" src="http:\/\/tbook2018.oss-cn-qingdao.aliyuncs.com\/20180321133723367.jpeg"></image>
+  <view class="pay-code">
+    <view>付款码：172837483974</view>
+    <view>
+      <button bindtap='copy' class="copy-btn" size="mini">点击复制</button>
+    </view>
+  </view>
+  <view>
+    <view>提示</view>
+    <view class="prompt">使用微信识别二维码，或扫描该二维码完成转账，转账时请在备注内填写付款码，等待后台审核通过后即可展示。如有疑问，请去个人中心页联系我们</view>
+  </view>
+</view>

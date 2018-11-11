@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/mall/mall",
+    "pages/personal/personal",
+    "pages/apply/apply",
+    "pages/favorite/favorite",
+    "pages/record/record",
+    "pages/myShop/myShop",
+    "pages/sellerDetail/sellerDetail",
+    "pages/test/test",
+    "component/myShopItem/myShopItem",
+    "pages/pay/pay",
+    "pages/pending/pending"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "商户商家通讯录",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#000",
+    "backgroundColor": "#fff",
+    "selectedColor": "#ffd300",
+    "borderStyle": "black",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/footer-icon-01.png",
+        "selectedIconPath": "images/footer-active-icon-01.png"
+      },
+      {
+        "text": "商家",
+        "pagePath": "pages/mall/mall",
+        "iconPath": "images/footer-icon-02.png",
+        "selectedIconPath": "images/footer-active-icon-02.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/personal/personal",
+        "iconPath": "images/footer-icon-03.png",
+        "selectedIconPath": "images/footer-active-icon-03.png"
+      }
+    ]
+  },
+  "debug": true
+}

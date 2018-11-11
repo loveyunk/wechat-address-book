@@ -1,0 +1,5 @@
+<view class="myShop-container"  bind:opendetail="onOpenDetail">
+  <block wx:for="{{sellerData}}" wx:key="{{index}}">
+    <seller-item bind:opendetail="onOpenDetail" id="{{item.id}}" name="{{item.name}}" address="{{item.addr_name}}" phone="{{item.cell_phone}}" avatar="{{item.logo}}" apply_time="{{item.add_time}}" end_time="{{item.end_time}}" status="{{item.status}}"></seller-item>
+  </block>
+</view>

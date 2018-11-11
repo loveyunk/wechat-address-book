@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view>
+    <navigator class="nav-item" url="/pages/apply/apply">
+      <image class="nav-item-icon" src='./apply.png'></image><text>申请开店</text>
+    </navigator>
+    <navigator class="nav-item" url="/pages/myShop/myShop">
+      <image class="nav-item-icon" src='./shop.png'></image><text>我的店铺</text>
+    </navigator>
+    <navigator class="nav-item" url="/pages/favorite/favorite">
+      <image class="nav-item-icon" src='./eye.png'></image><text>我的收藏</text>
+    </navigator>
+    <!-- <navigator class="nav-item" url="/pages/record/record"> -->
+    <view class="nav-item" bindtap="navtoPage">
+      <image class="nav-item-icon" src='./record.png'></image><text>拨号记录</text>
+    </view>
+    <!-- </navigator> -->
+  </view>
+  <view class="contact-us nav-item" bindtap="contactUs">
+    <image class="nav-item-icon" src='./contact.svg'></image>
+    联系我们
+  </view>
+  <view class="company-info">
+    沈阳泰桔丰连锁企业管理有限公司
+  </view>
+</view>

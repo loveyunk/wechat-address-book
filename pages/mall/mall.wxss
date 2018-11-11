@@ -1,0 +1,43 @@
+@import "/pages/common/loadMore/loadMore.wxss";
+/* pages/mall/mall.wxss */
+.choose-wrapper {
+  position: fixed;
+  top: 0;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  height: 102rpx;
+  width: 100%;
+  line-height: 102rpx;
+  z-index: 2;
+  background: #ffd300;
+  color: #fff;
+  border-bottom: 1px solid #efefef;
+  padding-left: 40rpx;
+  font-size: 30rpx;
+}
+
+.arrow-icon {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+  margin-bottom: -10rpx;
+  opacity: 0.6;
+  transform: rotate(90deg);
+  vertical-align: -6rpx;
+}
+
+.line{
+  margin: 100rpx 0;
+}
+
+.picker-wrapper {
+  width: 50%;
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

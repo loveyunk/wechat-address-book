@@ -1,0 +1,29 @@
+<import src="/pages/common/loadMore/loadMore.wxml" />
+<view class="myShop-container">
+  <!-- <block wx:for="{{sellerData}}" wx:key="{{index}}">
+    <seller-item name="{{item.name}}" phone="{{item.phone}}" avatar="{{item.avatar}}"></seller-item>
+  </block> -->
+
+  <view class="choose-wrapper">
+    <view class="section__title">请选择分类</view>
+    <view class="picker-wrapper">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="{{'name'}}">
+        <view class="picker">
+          <view>{{category}} </view>
+          <view>
+            <image class="arrow-icon" src="/images/arrow.svg"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='line'></view>
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height: {{ scrollHeight }}px;">
+    <block wx:for="{{categoryData}}" wx:key="{{index}}">
+      <seller-item bind:opendetail="onOpenDetail"  bind:opendetail="onOpenDetail" distance="{{item.distance}}" id="{{item.id}}" index="{{item.id}}" name="{{item.name}}" phone="{{item.cell_phone}}" location="{{item.addr_full_name}}" avatar="{{item.logo}}"></seller-item>
+    </block>
+  </scroll-view>
+</view>
+
+<template is="loadMore" data="{{ hidden }}">
+</template>

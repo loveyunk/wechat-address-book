@@ -1,0 +1,24 @@
+<view class="sellerItem-container" bindtap="openDetail">
+  <view>
+    <view class="info-wrapper">
+      <image bindtap="previewImage" class="avatar" src="{{avatar}}"></image>
+      <view class="info">
+        <view class="name">{{name}}</view>
+        <view>
+          <image src="./phone.svg" class="phone-icon"></image>
+          <text class="phone-icon">{{phone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="location-wrapper">
+      <image class="location-icon" src="./location.svg"></image>
+      {{location}}
+    </view>
+  </view>
+  <view class="layout-right">
+    <view catchtap="makePhoneCall" class="img-wrapper">
+      <image class="inner-phone" src="./phone2.svg"></image>
+    </view>
+    <view class="distance">距离{{distance}}km</view>
+  </view>
+</view>

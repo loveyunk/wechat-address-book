@@ -1,0 +1,69 @@
+<view class="detail">
+  <view class="header">
+    <view class="logo-wrapper">
+      <image bindtap='previewLogo' class="logo" src="{{logo}}"></image>
+    </view>
+    <view class="layout-right">
+      <view class="layout-right-top">
+        <view class="title">{{name}}</view>
+        <view bindtap="handleFavorite">
+          <image wx:if="{{isFavorite === '1'}}" class="favorite-icon" src="./favorite.svg"></image>
+          <image wx:if="{{isFavorite === '2'}}" class="favorite-icon" src="./favorite-o.svg"></image>
+        </view>
+      </view>
+      <view class="layout-right-bottom">
+        <view>收藏：{{favoriteNum}}</view>
+        <view>入驻时间：{{addTime}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-item">
+      <view>经营范围</view>
+      <view class="section-item__content">{{range}}</view>
+    </view>
+    <view class="section-item">
+      <view>商家联系人</view>
+      <view class="section-item__content">{{linkman}}</view>
+    </view>
+    <view class="section-item">
+      <view>微信号</view>
+      <view class="section-item__content">{{wechat}}</view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-item location-section-item">
+      <image class="section-item__location-icon" src="/images/location.svg"></image>
+      <view class="detail-address">商家详细地址</view>
+    </view>
+    <view class="section-item">
+      <view class="section-item__content">{{location}}</view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-item">
+      <view>商家介绍</view>
+    </view>
+    <view class="section-item intro-section-item">
+      <view class="section-item__content">{{intro}}</view>
+      <view class="intro-img-wrapper">
+        <block wx:for="{{introImgs}}" wx:key="{{index}}">
+          <image bindtap='previewImage' id='{{index}}' class="intro-img" src='{{item}}'></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-item" bindtap="goHome">
+      <image class="footer-item__icon" src="/images/footer-icon-01.png"></image>
+      <text>首页</text>
+    </view>
+    <view class="footer-item" bindtap="openLocation">
+      <image class="footer-item__icon" src="/images/location.svg"></image>
+      <text>导航</text>
+    </view>
+    <view class="footer-item footer-item-last" bindtap="contactSeller">
+      <text>联系商家</text>
+    </view>
+  </view>
+</view>

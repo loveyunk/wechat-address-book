@@ -1,0 +1,5 @@
+<view class="favorite-container">
+  <block wx:for="{{sellerData}}" wx:key="{{index}}">
+    <seller-item  bind:opendetail="onOpenDetail" id="{{item.store_shop.id}}" index="{{item.store_shop.id}}" distance="{{item.distance}}" name="{{item.store_shop.name}}" phone="{{item.store_shop.cell_phone}}" location="{{item.store_shop.addr_full_name}}" avatar="{{item.store_shop.logo}}"></seller-item>
+  </block>
+</view>
